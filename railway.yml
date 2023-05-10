@@ -1,0 +1,11 @@
+version: v1
+services:
+  app:
+    build:
+      base: nixpkgs/python311
+      script: |
+        python -m venv /opt/venv
+        . /opt/venv/bin/activate
+        pip install -r requirements.txt
+    run:
+      cmd: python flight-bot.py
